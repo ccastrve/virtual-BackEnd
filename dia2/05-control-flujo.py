@@ -27,7 +27,10 @@ else:
     print("Si recibe bono Yanapay y Balón de gas")
 
 
+# operador ternario
 
+n = int(input('Ingrese numero: '))
+msg = 'numero par' if n % 2 == 0 else 'numero impar'
 
 
 

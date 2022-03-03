@@ -1,7 +1,5 @@
 # se repite un número  limitado de veces
 
-from audioop import reverse
-
 
 notas = list(range(1,20,2))
 print(notas)
@@ -23,6 +21,16 @@ print("Las 3 notas mayores")
 notas.sort(reverse = True)
 print(notas[0:3])
 
+# break es un quiebre uan ruptura del bucle
+
+productos = ['Manzana', 'Pera', 'Tallarin', 'Tazas']
+busqueda = input('Ingrese producto: ')
+for producto in productos:
+    if producto == busqueda:
+        print('El producto si está en la tienda')
+        break
+else:
+    print('El producto no está en la tienda')
 
 
 

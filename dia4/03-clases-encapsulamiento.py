@@ -8,10 +8,10 @@ class Producto:
     def __init__(self, nombre, precio):
         self.nombre = nombre
         self.precio = precio
-
+        self.__ganancia = self.precio * 0.30
         # privado puede ser accedido desde la clase, pero no desde fuera de la clase o     de     la     instancia
         # un atributo se pone privado cuando no necesitamos que sea modificado desde afuera o que no varie su valor o calculo (en el caso de metodos)
-        self.__ganancia = self.precio * 0.30
+        
 
     def mostrar_info(self):
         return {

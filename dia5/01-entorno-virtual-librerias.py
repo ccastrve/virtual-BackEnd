@@ -8,7 +8,7 @@
 
 # python3 -m venv entorno_prueba --> con este comando se crea un entorno virtual se genera uan carpeta, son lugares aislados aqui todas librerias que instalemos solo seran usadas aqui, ni tampoco las librerias globales pueden utilizarse aqui
 
-# para activar el entorno de prueba utilizar 'source entorno_prueba/scripts/activate', para mac es 'bin' en lugar se 'scripts'con esto nos movemos al entorno virtual (en el caso de pwshell cmd no es necesario poner source, para gitbash si es necesario poner source)
+# para activar el entorno de prueba utilizar 'source entorno_prueba/scripts/activate', para mac es 'bin' en lugar de 'scripts'con esto nos movemos al entorno virtual (en el caso de pwshell y cmd no es necesario poner source, para gitbash si es necesario poner source)
 # con esta activacion se activa el interprete del entorno virtual, si no se activa clic en el la version de la barra inferior y cambiar el interprete python3 que esta en la carpeta del entorno virtual/bin
 # podemos darnos cuenta en el terminal de vscode que aparece activado el entorno_prueba
 # el entorno virtual se apaga/desactiva con 'deactivate'

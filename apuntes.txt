@@ -1,0 +1,17 @@
+
+"python3 -m venv entorno_prueba" --> con este comando se crea un entorno virtual se genera uan carpeta, son lugares aislados aqui todas librerias que instalemos solo seran usadas aqui, ni tampoco las librerias globales pueden utilizarse aqui
+
+"source entorno_prueba/scripts/activate" --> para activar el entorno de prueba utilizar 
+
+"pip3 list" --> muestra las librerias instaladas
+"
+pip3 freeze" --> lista las librerias (info del pip3 list menos la ibreria pip) de una froma técnica con el número de versión.
+
+"pip3 freeze > nombre_archivo" (con esto el resultado se envia a un archivo)
+
+"pip3 install -r requirements.txt" --> con esto se instala las librerías de requirements.txt
+
+en .gitignore --> se pone todos los archivos y carpetas que no queremos que se guarden con git
+
+cada nuevo entorno se crea desde cero no jala ninguna librería creada previamente
+

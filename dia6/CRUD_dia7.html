@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de CRUD</title>
+</head>
+<body>
+    <script>
+        const BASE_URL = "http://127.0.0.1:5000"  // esto es el puerto que esta consumiendo el servidor de mi servidor
+        fetch(`${BASE_URL}/clientes`, {method: "GET"})
+            .then((respuesta) => {
+                return respuesta.json();
+            })
+            .then((data) => {
+                console.log(data);
+            })        
+            .catch((error) => {
+                console.error("Hubo un error al hacer la perición a la API");
+            });
+
+    </script>
+ 
+ <!-- CORS (cross origin resource sharing) intercambio de recursos de origen cruzado, se deben habilitar
+    debemos instalar la libreria flask_cors  "pip3 install flask-cors" y habilitarlo en nuestra aplicación CRUD
+
+    cliente cuando hace una petición al servidor, el servidor hace validaciones, esto es por cada petición
+
+    1. validación allowed-method valida el metodo
+    2. allowed origin, valida la lista de origenes permitidos que puedan acceder/visitar
+    3. allowed header, son de cabecera, son los enunciados de nuestra petición (content-type, authorization,etc), si enviamos una cabecera que no está permitida, denegará el acceso
+
+
+-->
+
+</body>
+</html>

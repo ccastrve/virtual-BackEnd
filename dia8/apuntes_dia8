@@ -30,6 +30,42 @@ PATH=$PATH:/usr/local/mysql/bin
 sudo mysql -u root -p
 (aquí ingresar contraseña de mysql creada durante la instalación)
 
+Puerto por defecto de mysql 3306
+cada BD maneja su propio puerto
+
+
+
+mysql workbench que es un manejador gráfico de mysql
+=====================================================
+También se descargó el mysql workbench desde https://dev.mysql.com/downloads/workbench/
+
+servicio: Mysql@localhost:3306
+usuario: root
+Password: Ccastrve1@
+
+Si no tenemos el servicio levantado automáticamente, ir a los servicios de windows buscar el servicio ejm MySQL80, clic dercho y luego iniciar
+
+MySql
+=====
+
+Comentarios #
+
+En base de datos relacionales, las columnas tienen el mismo tipo de datos
+
+crear BD --> CREATE DATABASE nombre_base_datos; es obligatorio poner el punto y como
+
+buena practica, el nombre de las tablas debe ser siempre en plural
+
+CHAR(n) crea una columna que siempre ocupará n caracteres
+VARCHAR(n) crea una columna de dimensión variable hasta n caracteres, ocupará el espacio que necesita, pero al sobrepasar el límite arrojará un error
+TEXT() reservará el espacio necesario para el valor de la columna, no tiene límite
+
+Las columnas que no se especifique su especifidad (NOT NULL), aceptarán valores nulos
+
+el dni no puede ser llave porque puede repetirse con personas de otro país, si queremos declarar como único debemos poner UNIQUE
+
+con el atributo ENUM('CE', 'DNI', 'RUC', 'PASAPORTE', 'CM', 'OTRO') se puede definir que solo estos valores son aceptados
+
 
 
 

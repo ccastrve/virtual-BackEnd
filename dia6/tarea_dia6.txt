@@ -1,0 +1,18 @@
+hacer un front basado en el backend app.py
+
+sugerencia
+
+en get mostrar todos los clientes en la siguiente forma
+crear tabla: id, nombre, apellido, nacionalidad, acciones
+en acciones poner botones actualizar y eliminar
+
+cuando de clic en actualizar que nos muestre otra ventana con el GET del cliente seleccionado
+esto con dos botones cancel y update
+
+cuando clic en delete igual que abra otro modal
+
+
+
+
+
+

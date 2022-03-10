@@ -1,0 +1,36 @@
+Base de datos My SQL
+====================
+
+Para MAC
+Debes instlar brew con la siguiente
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+luego para instalar mysql
+brew install mysql
+
+para desinstalar
+brew uninstall mysql
+
+para windows descargar desde 
+https://dev.mysql.com/downloads/workbench/
+
+
+clave mysql Ccastrve1@
+
+
+me salió error al instalr con brew, lo instalé desde dmg descargardo de la dirección https://dev.mysql.com/downloads/mysql/   macOS 11 (x86, 64-bit), DMG Archive (425.5 M)
+
+instalé asigne clave Ccastrve1@
+
+Luego realicé las siguientes configuraciones:
+
+sudo mkdir /var/mysql
+sudo ln -s /tmp/mysql.sock
+PATH=$PATH:/usr/local/mysql/bin
+sudo mysql -u root -p
+(aquí ingresar contraseña de mysql creada durante la instalación)
+
+
+
+
+

@@ -8,7 +8,7 @@
 </head>
 <body>
     <script>
-        const BASE_URL = "http://127.0.0.1:5000"  // esto es el puerto que esta consumiendo el servidor de mi servidor
+        const BASE_URL = "http://127.0.0.1:5000"  // esto es el puerto que esta consumiendo el servidor de mi servidor (es el por defecto de flask) cuando esté en producción quizas sea otro.
         fetch(`${BASE_URL}/clientes`, {method: "GET"})
             .then((respuesta) => {
                 return respuesta.json();

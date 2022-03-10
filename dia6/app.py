@@ -2,9 +2,10 @@
 from crypt import methods
 from flask import Flask, request # importamos clase Flask y funcionalidad request
 from datetime import datetime
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 # pip3 es el gestor de descarga de python
 # insomnia es igual que postman
+# cross_origin es un controlador personalizado para modificar el cross
 
 app = Flask(__name__)
 CORS(app=app, origins=['http://127.0.0.1:1000', 'http://127.0.0.1:5500', 'http://miapp.vercel.app'], methods='*', allow_headers=['Content-Type'])
@@ -13,6 +14,8 @@ CORS(app=app, origins=['http://127.0.0.1:1000', 'http://127.0.0.1:5500', 'http:/
 #Content-Type indicará el tipo de contenido que estamos aplicando, cuando enviemos un json su valor será 'application/json', un xml 'application/xml', etc.
 # en el caso de mi pagina se debe poner la dirección de mi página web para que haga interacciones y se elimina las otras direcciones.
 # aqui deben anotarse los puertos que van a acceder desde el front en este caso el live server usa el 5500, incluso no puede ir el de mi servidor el :5000.
+#  en origins se indican los dominios que van a tener accesos a mi servidor
+#  en methods se indican los metodos que se atenderán
 
 
 clientes = [
@@ -38,6 +41,12 @@ def estado():
 # recibimos información
 @app.route('/clientes', methods=['POST', 'GET']) 
 # con el parámtero methods (que es una lista o tupla) indicamos el método que aceptará esta llamada, en este caso el método POST (ya no aceptará el método GET, si lo vemos en un navegador arrojará que el método POST no es soportado)
+
+#  ======== OJO MODIFICAR CORS PARA UNA RUTA PARTICULAR ============
+# @cross_origin(origins=['https://127.0.0.1:7000', 'http://mipagina.com'])
+# con esto se modifica las reglas globales de la aplicación (CORS) implantados al inicio y que solamente se respeten estas nuevas reglas en estos nuevos endpoint con sus métodos correspondientes, es decir solo podrán acceder las solicitudes desde estos lugares frontend
+
+
 def obtener_clientes():
     # el request solo puede ser llamado en cada controlador (funcion que se ejecutará cuando se realice una petición desde el front)
     if request.method == 'POST':
@@ -109,7 +118,7 @@ def gestion_cliente(id): # se puede enviar varios parámetros
             data = request.get_json()
             data['id'] = id # con esto agregamos a data el campo ID que no debería venir en la actualización
             clientes[pos] = data # aquí actualizamos el cliente con lo pasado en data incluyendo el ID que se agregó
-            return data
+            return clientes[pos]
 
         else:
             return ({
@@ -128,7 +137,10 @@ def gestion_cliente(id): # se puede enviar varios parámetros
                     'message': 'El cliente a eliminar no se encontró'
             }, 404)
         
-
+# endpoint registrados
+# /clientes - GET POST (visualizar, crear)
+# /cliente/:id - GET PUT DELETE (visualizar, actualizar, borrar)
+# el servidor recibe solicitud, se verifica los servicios y pasaremos a llamar al controlador y responder (return) y también devolvemos status
 
 #  en postman, nos devuelve información importante
 #  status 200 OK , Time 6ms, Size: 196 B

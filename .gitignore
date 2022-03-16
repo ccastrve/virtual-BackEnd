@@ -1,1 +1,3 @@
 entorno_flask/
+# excluimos todo los archivos cache de python en este caso ingredientes.cpython-310.pyc
+*.pyc

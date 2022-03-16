@@ -52,7 +52,10 @@ join matricula on grados.id = matricula.id_grado
 where matricula.fecha_cursada = '2003';
 
 -- 5 mostrar todos los alumnos del quinto A
-
+select *
+from alumnos join matricula on alumnos.id = matricula.id_alumno
+			 join grados on grados.id = matricula.id_grado
+where grados.nombre = 'Segundo' and grados.seccion = 'B'
 
 
 -- 6 mostrar todos los correos de los alumnos de primero B
